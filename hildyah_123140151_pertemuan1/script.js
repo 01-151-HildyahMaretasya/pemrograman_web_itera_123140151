@@ -1,8 +1,8 @@
-const form = document.getElementById("task-form");
-const taskList = document.getElementById("task-list");
-const searchInput = document.getElementById("search");
-const filterStatus = document.getElementById("filter-status");
-const countPending = document.getElementById("count-pending");
+const taskForm = document.getElementById("taskForm");
+const taskList = document.getElementById("taskList");
+const filterStatus = document.getElementById("filterStatus");
+const searchTask = document.getElementById("searchTask");
+const taskStats = document.getElementById("taskStats");
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
@@ -12,100 +12,88 @@ function saveTasks() {
 
 function renderTasks() {
   taskList.innerHTML = "";
-  let filteredTasks = tasks.filter((task) => {
-    const matchSearch = task.course
-      .toLowerCase()
-      .includes(searchInput.value.toLowerCase());
+  const filter = filterStatus.value;
+  const search = searchTask.value.toLowerCase();
+
+  const filteredTasks = tasks.filter((t) => {
     const matchStatus =
-      filterStatus.value === "all" ||
-      (filterStatus.value === "done" && task.done) ||
-      (filterStatus.value === "pending" && !task.done);
-    return matchSearch && matchStatus;
+      filter === "all" ||
+      (filter === "completed" && t.completed) ||
+      (filter === "pending" && !t.completed);
+    const matchSearch =
+      t.name.toLowerCase().includes(search) ||
+      t.course.toLowerCase().includes(search);
+    return matchStatus && matchSearch;
   });
 
   filteredTasks.forEach((task, index) => {
-    const li = document.createElement("li");
-    const info = document.createElement("div");
-    info.classList.add("task-info");
-    info.innerHTML = `
-      <h4 class="${task.done ? "done" : ""}">${task.name}</h4>
-      <small>${task.course} — Deadline: ${task.deadline}</small>
-    `;
-
-    const actions = document.createElement("div");
-    actions.classList.add("actions");
-    actions.innerHTML = `
-      <button onclick="toggleDone(${index})">${
-      task.done ? "Belum" : "Selesai"
+    const div = document.createElement("div");
+    div.className = "task" + (task.completed ? " completed" : "");
+    div.innerHTML = `
+      <div class="task-info">
+        <strong>${task.name}</strong><br>
+        <small>${task.course} • ${task.deadline}</small>
+      </div>
+      <div class="task-actions">
+        <button onclick="toggleTask(${index})">${
+      task.completed ? "↩" : "✔"
     }</button>
-      <button onclick="editTask(${index})">Edit</button>
-      <button onclick="deleteTask(${index})">Hapus</button>
+        <button onclick="editTask(${index})">✏</button>
+        <button onclick="deleteTask(${index})">🗑</button>
+      </div>
     `;
-
-    li.appendChild(info);
-    li.appendChild(actions);
-    taskList.appendChild(li);
+    taskList.appendChild(div);
   });
 
-  countPending.textContent = tasks.filter((t) => !t.done).length;
+  const pendingCount = tasks.filter((t) => !t.completed).length;
+  taskStats.textContent = `📌 ${pendingCount} tugas belum selesai`;
 }
 
-function addTask(e) {
-  e.preventDefault();
-  const name = document.getElementById("task-name").value.trim();
-  const course = document.getElementById("course").value.trim();
-  const deadline = document.getElementById("deadline").value;
-
-  if (!name || !course || !deadline) {
-    alert("Harap isi semua kolom dengan benar!");
-    return;
-  }
-
-  tasks.push({ name, course, deadline, done: false });
-  saveTasks();
-  renderTasks();
-  form.reset();
-}
-
-function toggleDone(index) {
-  tasks[index].done = !tasks[index].done;
-  saveTasks();
-  renderTasks();
-}
-
-function editTask(index) {
-  const newName = prompt("Ubah nama tugas:", tasks[index].name);
-  const newCourse = prompt("Ubah mata kuliah:", tasks[index].course);
-  const newDeadline = prompt(
-    "Ubah deadline (YYYY-MM-DD):",
-    tasks[index].deadline
-  );
-
-  if (!newName || !newCourse || !newDeadline) {
-    alert("Semua field harus diisi!");
-    return;
-  }
-
-  tasks[index] = {
-    ...tasks[index],
-    name: newName,
-    course: newCourse,
-    deadline: newDeadline,
-  };
+function toggleTask(index) {
+  tasks[index].completed = !tasks[index].completed;
   saveTasks();
   renderTasks();
 }
 
 function deleteTask(index) {
-  if (confirm("Yakin ingin menghapus tugas ini?")) {
-    tasks.splice(index, 1);
+  tasks.splice(index, 1);
+  saveTasks();
+  renderTasks();
+}
+
+function editTask(index) {
+  const t = tasks[index];
+  const newName = prompt("Edit Nama Tugas:", t.name);
+  const newCourse = prompt("Edit Mata Kuliah:", t.course);
+  const newDeadline = prompt("Edit Deadline (YYYY-MM-DD):", t.deadline);
+
+  if (newName && newCourse && newDeadline) {
+    t.name = newName;
+    t.course = newCourse;
+    t.deadline = newDeadline;
     saveTasks();
     renderTasks();
   }
 }
 
-form.addEventListener("submit", addTask);
-searchInput.addEventListener("input", renderTasks);
+taskForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const name = document.getElementById("taskName").value.trim();
+  const course = document.getElementById("taskCourse").value.trim();
+  const deadline = document.getElementById("taskDeadline").value;
+
+  if (!name || !course || !deadline) {
+    alert("Semua kolom wajib diisi!");
+    return;
+  }
+
+  tasks.push({ name, course, deadline, completed: false });
+  saveTasks();
+  taskForm.reset();
+  renderTasks();
+});
+
 filterStatus.addEventListener("change", renderTasks);
+searchTask.addEventListener("input", renderTasks);
 
 renderTasks();
