@@ -4,34 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aplikasi Manajemen Tugas Mahasiswa</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
       <h1>Manajemen Tugas Mahasiswa</h1>
 
-      <form id="task-form">
-        <input type="text" id="task-name" placeholder="Nama Tugas" required />
-        <input type="text" id="course" placeholder="Mata Kuliah" required />
-        <input type="date" id="deadline" required />
+      <form id="taskForm">
+        <input type="text" id="taskName" placeholder="Nama Tugas" required />
+        <input type="text" id="taskCourse" placeholder="Mata Kuliah" required />
+        <input type="date" id="taskDeadline" required />
         <button type="submit">Tambah Tugas</button>
       </form>
 
       <div class="filter">
-        <input
-          type="text"
-          id="search"
-          placeholder="Cari berdasarkan mata kuliah..."
-        />
-        <select id="filter-status">
+        <select id="filterStatus">
           <option value="all">Semua</option>
-          <option value="done">Selesai</option>
+          <option value="completed">Selesai</option>
           <option value="pending">Belum Selesai</option>
         </select>
+        <input type="text" id="searchTask" placeholder="Cari tugas..." />
       </div>
 
-      <h3>Daftar Tugas (<span id="count-pending">0</span> belum selesai)</h3>
-      <ul id="task-list"></ul>
+      <div class="task-list" id="taskList"></div>
+      <div class="stats" id="taskStats"></div>
     </div>
 
     <script src="script.js"></script>
