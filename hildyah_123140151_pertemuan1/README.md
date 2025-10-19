@@ -38,14 +38,19 @@ Aplikasi ini dibuat menggunakan:
 Berikut beberapa cuplikan tampilan aplikasi:
 
 ### 1️⃣ Tampilan Utama Saat Aplikasi Dibuka
+<img width="386" height="298" alt="image" src="https://github.com/user-attachments/assets/335ef41f-1d04-4225-b423-a1e6a1c1ada9" />
 
 ### 2️⃣ Proses Menambah Tugas
+<img width="376" height="426" alt="image" src="https://github.com/user-attachments/assets/423be798-142f-40fb-95be-82e2c231fd00" />
 
-### 3️⃣ Tampilan Daftar Tugas dengan Filter dan Pencarian
+### 3️⃣ Tampilan Daftar Tugas
+<img width="371" height="427" alt="image" src="https://github.com/user-attachments/assets/bfcf3c06-7615-4b63-a166-b24ded6b4e12" />
 
 ### 4️⃣ Tampilan Filter dan Pencarian
+<img width="371" height="386" alt="image" src="https://github.com/user-attachments/assets/7d5ba983-ff43-4fdf-94d5-95be3d6291fa" />
 
 ### 5️⃣ Tampilan Edit Tugas 
+<img width="385" height="449" alt="image" src="https://github.com/user-attachments/assets/2a2628ce-9a06-4151-84c2-c604c2049ade" />
 
 ---
 
@@ -136,12 +141,13 @@ Hal ini mencegah data tidak valid masuk ke daftar tugas.
 
 ---
 
-## 🎨 Teknologi yang Digunakan
+## Teknologi yang Digunakan
 
 | Teknologi                     | Fungsi                                                    |
 | ----------------------------- | --------------------------------------------------------- |
 | **HTML5**                     | Struktur halaman dan elemen form                          |
 | **CSS3 (Pastel Purple/Pink)** | Desain UI lembut dan responsif                            |
 | **JavaScript (Vanilla JS)**   | Logika CRUD, validasi, filter, dan penyimpanan data lokal |
+
 
 
