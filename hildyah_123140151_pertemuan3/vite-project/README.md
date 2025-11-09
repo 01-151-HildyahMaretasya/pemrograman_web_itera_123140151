@@ -61,21 +61,29 @@ vite-project/
 │   ├── components/           # Reusable Components
 │   │   ├── BookFilter/
 │   │   │   └── BookFilter.jsx
+│   │   │   └── BookFilter.test.jsx
 │   │   ├── BookForm/
 │   │   │   └── BookForm.jsx
+│   │   │   └── BookForm.test.jsx
 │   │   ├── BookItem/
 │   │   │   └── BookItem.jsx
+│   │   │   └── BookItem.test.jsx
 │   │   ├── BookList/
 │   │   │   └── BookList.jsx
+│   │   │   └── BookList.test.jsx
 │   │   └── SearchBar/
-│   │       └── SearchBar.jsx
+│   │   │   └── SearchBar.jsx
+│   │   │   └── SearchBar.test.jsx
 │   │
 │   ├── context/              # Context API
 │   │   └── BookContext.jsx
+│   │   └── BookContext.testjsx
 │   │
 │   ├── hooks/                # Custom Hooks
 │   │   ├── useBookStats.js
+│   │   └── useBookStats.test.js
 │   │   └── useLocalStorage.js
+│   │   └── useBookStorage.test.js
 │   │
 │   ├── pages/                # Page Components
 │   │   ├── Home/
@@ -83,12 +91,16 @@ vite-project/
 │   │   └── Stats/
 │   │       └── Stats.jsx
 │   │
+│   ├── test/                # testing
+│   │   ├── setup.js
+│   │
 │   ├── App.jsx               # Main App Component
 │   ├── App.css               # Main Styles
 │   ├── index.css             # Global Styles
 │   └── main.jsx              # Entry Point
 │
 ├── package.json
+├── package-lock.json
 ├── vite.config.js
 └── README.md
 ```
@@ -144,24 +156,22 @@ npm run preview
 ## Screenshot Aplikasi
 
 ### Home Page - Book List
-![Home Page](screenshots/home-page.png)
-*Halaman utama dengan daftar buku, search bar, dan filter*
+<img width="959" height="414" alt="image" src="https://github.com/user-attachments/assets/dc6a8ef0-504a-43d2-a964-5f8620f3954e" />
 
 ### ➕ Add Book Form
-![Add Form](screenshots/add-form.png)
-*Form untuk menambah buku baru dengan validasi*
+<img width="959" height="413" alt="image" src="https://github.com/user-attachments/assets/2d37be82-de3e-4376-a266-9e53d07ed425" />
 
 ### ✏️ Edit Book
-![Edit Form](screenshots/edit-form.png)
-*Mode edit untuk mengupdate informasi buku*
+<img width="959" height="412" alt="image" src="https://github.com/user-attachments/assets/ec0fb8d2-7343-41ca-9118-b17d8c54eca8" />
 
 ### 📊 Statistics Page
-![Statistics](screenshots/statistics.png)
-*Dashboard statistik dengan card informatif dan progress bar*
+<img width="959" height="410" alt="image" src="https://github.com/user-attachments/assets/0c483e88-168b-4fbb-a37e-62f702bfce49" />
+
 
 ### 🔍 Search & Filter
-![Search Filter](screenshots/search-filter.png)
-*Fitur pencarian dan filter yang bekerja real-time*
+<img width="959" height="408" alt="image" src="https://github.com/user-attachments/assets/c9d35ae0-445c-45a8-b73d-0b7676e34802" />
+
+<img width="959" height="410" alt="image" src="https://github.com/user-attachments/assets/426fec51-a45a-4844-ab7b-798b68b88596" />
 
 ---
 
@@ -298,92 +308,19 @@ npm run test
 npm run test:coverage
 ```
 
-### Unit Tests yang Diimplementasikan
-
-#### 1. **BookContext Test** (`BookContext.test.jsx`)
-```jsx
-describe('BookContext', () => {
-  it('should add a new book', () => {
-    // Test add book functionality
-  });
-  
-  it('should update existing book', () => {
-    // Test update book functionality
-  });
-  
-  it('should delete a book', () => {
-    // Test delete book functionality
-  });
-});
-```
-
-#### 2. **useLocalStorage Test** (`useLocalStorage.test.js`)
-```jsx
-describe('useLocalStorage Hook', () => {
-  it('should initialize with default value', () => {
-    // Test initial state
-  });
-  
-  it('should sync with localStorage', () => {
-    // Test localStorage sync
-  });
-});
-```
-
-#### 3. **BookForm Test** (`BookForm.test.jsx`)
-```jsx
-describe('BookForm Component', () => {
-  it('should validate required fields', () => {
-    // Test form validation
-  });
-  
-  it('should submit form with valid data', () => {
-    // Test form submission
-  });
-  
-  it('should show error messages for invalid input', () => {
-    // Test error handling
-  });
-});
-```
-
-#### 4. **BookList Test** (`BookList.test.jsx`)
-```jsx
-describe('BookList Component', () => {
-  it('should render list of books', () => {
-    // Test book rendering
-  });
-  
-  it('should show empty state when no books', () => {
-    // Test empty state
-  });
-});
-```
-
-#### 5. **SearchBar Test** (`SearchBar.test.jsx`)
-```jsx
-describe('SearchBar Component', () => {
-  it('should update query on input change', () => {
-    // Test search functionality
-  });
-  
-  it('should call setQuery with correct value', () => {
-    // Test callback
-  });
-});
+```bash
+npm run test:ui
 ```
 
 ### 📊 Test Results
 
-![Test Results](screenshots/test-results.png)
-*Screenshot hasil running test suite*
+![Gambar WhatsApp 2025-11-09 pukul 14 00 10_a6990056](https://github.com/user-attachments/assets/7e55a5a8-c24d-4f29-9372-441b25afee44)
 
-![Test Coverage](screenshots/test-coverage.png)
-*Screenshot coverage report*
+<img width="959" height="412" alt="image" src="https://github.com/user-attachments/assets/d411271e-b0eb-4f5b-8163-0557410f3e19" />
 
 ---
 
-## 🔒 Error Handling
+## Error Handling
 
 ### Form Validation
 ```jsx
