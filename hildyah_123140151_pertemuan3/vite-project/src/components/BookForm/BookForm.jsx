@@ -86,18 +86,18 @@ export default function BookForm({ editBook = null, onDone }) {
       </div>
 
       {/* Form */}
-      <div className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4">
         {/* Title Input */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="book-title-input" className="block text-sm font-medium text-gray-700 mb-2">
             Book Title <span className="text-red-500">*</span>
           </label>
           <input
+            id="book-title-input"
             type="text"
             value={form.title}
             onChange={e => setForm({...form, title: e.target.value })}
             placeholder="Enter book title"
-            aria-label="title-input"
             className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all ${
               errors.title ? 'border-red-500 bg-red-50' : 'border-gray-200'
             }`}
@@ -111,15 +111,15 @@ export default function BookForm({ editBook = null, onDone }) {
 
         {/* Author Input */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="book-author-input" className="block text-sm font-medium text-gray-700 mb-2">
             Author Name <span className="text-red-500">*</span>
           </label>
           <input
+            id="book-author-input"
             type="text"
             value={form.author}
             onChange={e => setForm({...form, author: e.target.value })}
             placeholder="Enter author name"
-            aria-label="author-input"
             className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all ${
               errors.author ? 'border-red-500 bg-red-50' : 'border-gray-200'
             }`}
@@ -133,13 +133,13 @@ export default function BookForm({ editBook = null, onDone }) {
 
         {/* Status Select */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="book-status-select" className="block text-sm font-medium text-gray-700 mb-2">
             Status
           </label>
           <select
+            id="book-status-select"
             value={form.status}
             onChange={e => setForm({...form, status: e.target.value })}
-            aria-label="status-select"
             className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all cursor-pointer ${statusColors[form.status]}`}
           >
             <option value="own">📚 Own</option>
@@ -151,13 +151,14 @@ export default function BookForm({ editBook = null, onDone }) {
         {/* Action Buttons */}
         <div className="flex gap-3 pt-2">
           <button
-            onClick={handleSubmit}
+            type="submit"
             className="flex-1 bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg active:scale-95"
           >
             {editBook ? '💾 Save Changes' : '➕ Add Book'}
           </button>
           {editBook && (
             <button
+              type="button"
               onClick={onDone}
               className="px-6 bg-gray-100 text-gray-700 py-3 rounded-lg font-medium hover:bg-gray-200 transition-colors"
             >
@@ -165,7 +166,7 @@ export default function BookForm({ editBook = null, onDone }) {
             </button>
           )}
         </div>
-      </div>
+      </form>
     </div>
   )
 }
