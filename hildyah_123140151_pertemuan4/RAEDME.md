@@ -165,6 +165,8 @@ python main.py
 
 ### Menu dan Fungsinya
 
+<img width="658" height="291" alt="image" src="https://github.com/user-attachments/assets/99c2f83e-4f14-4ecc-80c9-5f6fc0442bd9" />
+
 #### Menu 1: Tampilkan Semua Data
 ```
 Input  : Pilih menu 1
@@ -176,6 +178,7 @@ Output : Tabel berisi semua data mahasiswa
          - Nilai Akhir
          - Grade
 ```
+<img width="642" height="236" alt="image" src="https://github.com/user-attachments/assets/9da56900-1f18-43cf-a5da-4d2835d6fc96" />
 
 #### Menu 2: Tambah Mahasiswa Baru
 ```
@@ -192,6 +195,7 @@ Proses : - Validasi semua input
 
 Output : Konfirmasi berhasil + tampilkan data baru
 ```
+<img width="625" height="275" alt="image" src="https://github.com/user-attachments/assets/ac95783f-bdfb-4892-bce9-b545b34da3d1" />
 
 #### Menu 3: Cari Nilai Tertinggi
 ```
@@ -199,6 +203,7 @@ Input  : Pilih menu 3
 Proses : Cari mahasiswa dengan nilai_akhir tertinggi
 Output : Tampilkan data mahasiswa tersebut
 ```
+<img width="628" height="154" alt="image" src="https://github.com/user-attachments/assets/b5a01a12-450a-4158-9e4e-e34cf3214231" />
 
 #### Menu 4: Cari Nilai Terendah
 ```
@@ -206,6 +211,7 @@ Input  : Pilih menu 4
 Proses : Cari mahasiswa dengan nilai_akhir terendah
 Output : Tampilkan data mahasiswa tersebut
 ```
+<img width="623" height="185" alt="image" src="https://github.com/user-attachments/assets/79a9e195-387f-4a8f-88bf-47786aa1c906" />
 
 #### Menu 5: Filter Berdasarkan Grade
 ```
@@ -215,6 +221,7 @@ Input  : - Pilih menu 5
 Proses : Filter semua mahasiswa dengan grade tersebut
 Output : Tabel mahasiswa yang sesuai grade
 ```
+<img width="637" height="207" alt="image" src="https://github.com/user-attachments/assets/48428ae0-d6c0-4fe1-a740-24dc34960019" />
 
 #### Menu 6: Rata-rata Kelas
 ```
@@ -226,6 +233,8 @@ Proses : - Hitung total nilai_akhir semua mahasiswa
 Output : - Nilai rata-rata kelas
          - Grade rata-rata kelas
 ```
+<img width="554" height="122" alt="image" src="https://github.com/user-attachments/assets/9936a0be-d333-403c-817c-d827949c4cd0" />
+
 
 #### Menu 7: Statistik Lengkap
 ```
@@ -238,15 +247,17 @@ Output : - Total mahasiswa
            * Jumlah mahasiswa per grade
            * Persentase per grade
 ```
+<img width="612" height="276" alt="image" src="https://github.com/user-attachments/assets/e19c90ee-25aa-4bde-89c0-a02ff91cdef4" />
 
 #### Menu 8: Keluar 
 ```
 Input  : Pilih menu 8
 Output : Terima kasih telah menggunakan program ini!
 ```
+<img width="605" height="236" alt="image" src="https://github.com/user-attachments/assets/8877abf8-25f3-4a55-9f90-2b69cab5ea0e" />
 
 #### MenuError Handling - Input Tidak Valid
-
+<img width="581" height="236" alt="image" src="https://github.com/user-attachments/assets/837caed7-24d2-4c4e-b88f-3199316cf44d" />
 
 ---
 
@@ -369,7 +380,7 @@ Example:
 
 ---
 
-## 🎯 Sistem Penilaian
+## Sistem Penilaian
 
 ### Bobot Penilaian Nilai Akhir
 
