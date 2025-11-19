@@ -1,8 +1,3 @@
-"""
-Module: library_item.py
-Deskripsi: Abstract base class untuk semua item di perpustakaan
-"""
-
 from abc import ABC, abstractmethod
 
 
