@@ -15,7 +15,7 @@ Program ini menggunakan **menu interaktif** di mana pengguna bisa:
 - **Validasi input** otomatis
 - **Loop menu** sampai user memilih keluar
 
-### 📋 Daftar Fitur (Menu 1-8)
+### Daftar Fitur (Menu 1-8)
 
 | Menu | Fitur | Deskripsi | Input User |
 |------|-------|-----------|------------|
@@ -189,13 +189,36 @@ class Library:
 
 ## Screenshot Hasil Running Program
 
-### 1. Penambahan Item & Display
+### Tampilan Awal
+<img width="547" height="226" alt="image" src="https://github.com/user-attachments/assets/3f6ab418-e614-4361-b7fe-75a85ee3217f" />
 
-### 2. Statistik Perpustakaan
+### 1. Penambahan Buku
+<img width="557" height="170" alt="image" src="https://github.com/user-attachments/assets/858751d7-3458-4bcf-b0ec-95e13a693469" />
 
-### 3. Pencarian Item
+### 2. Tambah Majalah
+<img width="508" height="181" alt="image" src="https://github.com/user-attachments/assets/d75e6e64-96bf-44b0-9a09-24eb055fdb6b" />
 
-### 4. Peminjaman & Pengembalian
+### 3. Tampilkan Semua Item
+<img width="529" height="298" alt="image" src="https://github.com/user-attachments/assets/04807f50-e0a7-4f05-b4ab-4df735a7de13" />
+
+### 4. Cari Item berdasarkan Judul
+<img width="482" height="230" alt="image" src="https://github.com/user-attachments/assets/8c66ec6c-eb0f-4c61-9cf3-6e90fa7878b2" />
+
+### 5. Cari Item berdasarkan ID
+<img width="470" height="101" alt="image" src="https://github.com/user-attachments/assets/d9a1ad2a-6f19-4969-a841-22898328084b" />
+<img width="503" height="226" alt="image" src="https://github.com/user-attachments/assets/a19c079c-6847-4845-857c-7abf251829d4" />
+
+### 6. Pinjam Item
+<img width="487" height="103" alt="image" src="https://github.com/user-attachments/assets/325f4e3c-22fd-4c09-b979-a0a8bb1b8c69" />
+
+### 7. Kembalikan Item
+<img width="490" height="101" alt="image" src="https://github.com/user-attachments/assets/a62b0cbf-1d61-423d-ac51-201b2b82d8cc" />
+
+### 8. Lihat Statistik
+<img width="470" height="158" alt="image" src="https://github.com/user-attachments/assets/675ff85d-fe16-4996-bb08-a91d6fc85957" />
+
+### 0. Keluar
+<img width="476" height="86" alt="image" src="https://github.com/user-attachments/assets/17b06dc6-5763-462c-9ff1-35267a60362e" />
 
 ---
 
