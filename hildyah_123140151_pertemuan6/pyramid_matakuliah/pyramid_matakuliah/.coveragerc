@@ -1,3 +1,0 @@
-[run]
-source = pyramid_matakuliah
-omit = pyramid_matakuliah/test*
