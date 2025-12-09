@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Personal Dashboard - Next Gen JS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>📊 Personal Dashboard</h1>
+      <div class="meta">
+        <span class="small">🌍 <strong id="tz">...</strong></span>
+        <span id="clock">--:--:--</span>
+      </div>
+    </header>
+
+    <!-- Statistik -->
+    <section class="card" style="grid-column: 1 / -1;">
+      <h2>📈 Statistik</h2>
+      <div class="stats">
+        <div class="stat-card">
+          <span class="number" id="totalTasks">0</span>
+          <span class="label">Total Tugas</span>
+        </div>
+        <div class="stat-card">
+          <span class="number" id="completedTasks">0</span>
+          <span class="label">Selesai</span>
+        </div>
+        <div class="stat-card">
+          <span class="number" id="pendingTasks">0</span>
+          <span class="label">Belum Selesai</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Daftar Tugas -->
+    <section class="card tasks">
+      <h2>✅ Daftar Tugas</h2>
+      
+      <form id="taskForm">
+        <input id="taskText" placeholder="Tambahkan tugas baru..." required />
+        
+        <div class="form-row">
+          <input id="taskDue" type="date" />
+          <select id="taskPriority">
+            <option value="low">Prioritas Rendah</option>
+            <option value="medium" selected>Prioritas Sedang</option>
+            <option value="high">Prioritas Tinggi</option>
+          </select>
+        </div>
+        
+        <textarea id="taskNotes" placeholder="Catatan tambahan (opsional)"></textarea>
+        
+        <div class="btn-row">
+          <button type="reset">Bersihkan</button>
+          <button class="primary" id="addBtn">➕ Tambah Tugas</button>
+        </div>
+      </form>
+
+      <div class="filter-bar">
+        <button class="active" data-filter="all">Semua</button>
+        <button data-filter="pending">Aktif</button>
+        <button data-filter="completed">Selesai</button>
+      </div>
+
+      <div class="list" id="taskList"></div>
+    </section>
+
+    <!-- Sidebar -->
+    <aside class="right">
+      <!-- Catatan -->
+      <div class="card">
+        <h3>📝 Catatan Singkat</h3>
+        <textarea id="notes" class="note" placeholder="Tulis catatanmu di sini..."></textarea>
+        <p class="small" style="margin: 8px 0;">Terakhir disimpan: <span id="lastSaved">-</span></p>
+        <div class="btn-row">
+          <button id="notesClear">Hapus</button>
+          <button class="success" id="notesSave">💾 Simpan</button>
+        </div>
+      </div>
+
+      <!-- Informasi -->
+      <div class="card">
+        <h3>ℹ️ Informasi</h3>
+        <p class="small">
+          <strong>Fitur ES6+ yang diimplementasikan:</strong><br>
+          <span class="badge">let/const</span>
+          <span class="badge">Arrow Functions</span>
+          <span class="badge">Template Literals</span>
+          <span class="badge">Classes</span>
+          <span class="badge">Async/Await</span>
+          <span class="badge">Destructuring</span>
+          <span class="badge">Spread Operator</span>
+        </p>
+        <p class="small" style="margin-top: 12px;">
+          Dashboard ini menggunakan <code>localStorage</code> untuk menyimpan data secara lokal di browser Anda.
+        </p>
+      </div>
+    </aside>
+
+    <footer>
+      <strong>Tugas JavaScript Next Gen</strong> | 
+      Hildyah Maretasya (123140151)
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
