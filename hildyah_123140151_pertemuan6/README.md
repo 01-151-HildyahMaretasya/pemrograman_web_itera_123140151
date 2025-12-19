@@ -394,6 +394,11 @@ Berikan permission pada file:
 chmod +x env/bin/activate
 ```
 
+## Screenshot 
+<img width="666" height="200" alt="image" src="https://github.com/user-attachments/assets/7b0cab9e-60f3-481a-9e8c-04244bbe86f6" />
+<img width="667" height="133" alt="image" src="https://github.com/user-attachments/assets/3e8e37dc-195b-4f17-bbed-1485a11e0c51" />
+
+
 ## Struktur Project
 
 ```
@@ -422,3 +427,4 @@ pyramid_matakuliah/
 ├── setup.py
 └── README.md
 ```
+
